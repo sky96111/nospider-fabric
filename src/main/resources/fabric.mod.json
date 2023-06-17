@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "nospider",
+  "version": "${version}",
+  "name": "NoSpider",
+  "description": "Remove spider and cave spider completely for those who suffering from Arachnophobia",
+  "authors": [
+    "sky96111"
+  ],
+  "contact": {
+    "repo": "https://github.com/sky96111/nospider"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "github.sky96111.nospider.NoSpider"
+    ]
+  },
+  "mixins": [
+    "nospider.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

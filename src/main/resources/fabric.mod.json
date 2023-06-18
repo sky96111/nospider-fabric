@@ -17,9 +17,6 @@
       "github.sky96111.nospider.NoSpider"
     ]
   },
-  "mixins": [
-    "nospider.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",

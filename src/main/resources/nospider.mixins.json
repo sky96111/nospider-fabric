@@ -5,7 +5,8 @@
   "mixins": [
   ],
   "client": [
-    "EntityRenderBlocker"
+    "EntityRenderBlocker",
+    "EntityVisibleBlocker"
   ],
   "injectors": {
     "defaultRequire": 1

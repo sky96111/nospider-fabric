@@ -3,13 +3,15 @@
   "id": "nospider",
   "version": "${version}",
   "name": "NoSpider",
-  "description": "Remove spider and cave spider completely for those who suffering from Arachnophobia",
+  "description": "Remove Spiders, Cave Spiders and their belongings completely from Minecraft.\nFor those who suffering from arachnophobic like me.",
   "authors": [
     "sky96111"
   ],
   "contact": {
-    "repo": "https://github.com/sky96111/nospider"
+    "homepage": "https://github.com/sky96111/nospider-fabric/releases",
+    "sources": "https://github.com/sky96111/nospider-fabric"
   },
+  "icon": "assets/icon.png",
   "license": "MIT",
   "environment": "*",
   "entrypoints": {
@@ -17,9 +19,12 @@
       "github.sky96111.nospider.NoSpider"
     ]
   },
+  "mixins": [
+    "nospider.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "~${minecraft_version}"
   }
 }

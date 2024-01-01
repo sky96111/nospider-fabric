@@ -1,4 +1,5 @@
-![logo](https://github.com/sky96111/nospider-fabric/blob/master/src/main/resources/assets/icon.png)
+![logo](https://github.com/sky96111/nospider-fabric/blob/master/src/main/resources/assets/icon.png)  
+**English** | [简体中文](readme/zh_cn.md)
 # NoSpider-Fabric
 Remove Spiders, Cave Spiders and their belongings completely from Minecraft.  
 For those who suffering from arachnophobic like me.

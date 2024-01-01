@@ -3,6 +3,7 @@ package github.sky96111.nospider;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerBlockEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -18,8 +19,6 @@ import java.util.HashSet;
 public class NoSpider implements ModInitializer {
     private static int entityCount = 0;
     private static int spawnerCount = 0;
-    private static boolean isWorldLoaded = false;
-
     public static final Logger LOGGER = LoggerFactory.getLogger(NoSpider.class);
 
     public static HashSet<EntityType<?>> BLOCKED_TYPES = new HashSet<>() {{
@@ -68,21 +67,14 @@ public class NoSpider implements ModInitializer {
             }
         });
 
-        ServerWorldEvents.LOAD.register((server, world) -> {
-            if (isWorldLoaded) {
-                return;
-            }
+        ServerLifecycleEvents.SERVER_STARTING.register((server) -> {
             entityCount = 0;
             spawnerCount = 0;
-            isWorldLoaded = true;
         });
 
-        ServerWorldEvents.UNLOAD.register((server, world) -> {
-            if (!isWorldLoaded) {
-                return;
-            }
+        ServerLifecycleEvents.SERVER_STOPPING.register((server) -> {
             LOGGER.info("Blocked: {} Mobs, {} SpawnerBlocks", entityCount, spawnerCount);
-            isWorldLoaded = false;
         });
+
     }
 }
